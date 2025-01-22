@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block css_links %}
+
+
+{% endblock css_links %}
+
+{% block content %}
+<h2>Statistiques</h2>
+<ul>
+    <li><a href="graphe_toilettes">
+        Nombre total de toilettes publiques en service</a>
+    </li>
+    <li>
+        <a href="graphe_tde">
+            Nombre d'agences tde par régions administratives
+        </a>
+    </li>
+    <li>
+        <a href="graphe_etablissement">
+            Nombre d'agences de traitement de déchet par région
+        </a>
+    </li>
+    <li></li>
+    <li></li>
+</ul>
+<h2>Cartes</h2>
+<ul>
+    <li><a href="carte_agences_tde">
+        Carte des agences de la tde
+    </a></li>
+    <li><a href="carte_bornes_fontaines">Carte des fontaines d'eau</a></li>
+    <li>
+        <a href="carte_poste_eau">
+            Carte des postes d'eau autonome
+        </a>
+    </li>
+   
+</ul>
+
+{% endblock content %}

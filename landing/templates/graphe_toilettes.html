@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div>
+    <canvas id="myChart"></canvas>
+  </div>
+{% comment %} <div id="chartContainer" style="width: 80%; height: 360px;"></div> {% endcomment %}
+{% endblock content %}
+
+{% block scripts %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.min.js" integrity="sha512-L0Shl7nXXzIlBSUUPpxrokqq4ojqgZFQczTYlGjzONGTDAcLremjwaWv5A+EDLnxhQzY5xUZPWLOLqYRkY0Cbw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    const ctx = document.getElementById('myChart');
+    const labels = [];
+        const dataValues = [];
+        {% for item in datatoilet %}
+            labels.push("{{ item.label }}");
+            dataValues.push({{ item.y }});
+        {% endfor %}
+    new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: labels,
+        datasets: [{
+          label: '# de toilettes',
+          data: dataValues,
+          backgroundColor: [
+          'rgba(75, 192, 192, 0.2)',
+          'rgba(54, 162, 235, 0.2)',
+          'rgba(255, 206, 86, 0.2)',
+          'rgba(153, 102, 255, 0.2)',
+          'rgba(255, 159, 64, 0.2)'
+        ],
+        borderColor: [
+          'rgba(75, 192, 192, 1)',
+          'rgba(54, 162, 235, 1)',
+          'rgba(255, 206, 86, 1)',
+          'rgba(153, 102, 255, 1)',
+          'rgba(255, 159, 64, 1)'
+        ],
+        borderWidth: 1
+        }]
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    });
+  </script>
+
+
+{% comment %} <script src="{% static 'js/canvasjs.min.js' %}"></script>
+<script>
+    window.onload = function () {
+        var chart = new CanvasJS.Chart("chartContainer", {
+            animationEnabled: true, // change to false
+            title:{
+                text: "Nombre de toilette publique par région"
+            },
+            data: [{
+                type: "column",
+                dataPoints: {{ datatoilet|safe }}
+            }]
+        });
+        chart.render();
+    }
+</script> {% endcomment %}
+{% endblock scripts %}
