@@ -1,7 +1,5 @@
-# water_improvement
-Ceci est un projet de gestion de la répartition fontaine sur le territoire togolais. Il est développé en django et n'utilise pas de base de données
+# Water Improvement Website in Togo
 
-#Utilisation
-Les données sont contenues dans le dossier "media".
-Il faut à la racine du projet créer un environnement virtuel et installer les dépendances suivantes: django, os.
-Il suffit à présent de lancer à la racine du projet la commande "python manage.py runserver".
+This is a project for managing fountain distribution in Togo. It is developed in django and does not use a database.
+
+#Use The data is contained in the ‘media’ folder. You need to create a virtual environment at the root of the project and install the following dependencies: django, os. All you need to do now is run the ‘python manage.py runserver’ command at the root of the project.
