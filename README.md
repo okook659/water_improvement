@@ -2,9 +2,10 @@
 
 This is a project for managing fountain distribution in Togo. It is developed in django and does not use a database.
 
-#Use 
+## Use 
 
-❗❗Important❗❗ : To run this project, you need python version 3.12, not 3.13, as some libraries are not official.
+### ❗❗Important❗❗ 
+To run this project, you need python version 3.12, not 3.13, as some libraries are not official.
 
 We will install the libraries with the command pip install -r requirements.txt
 
